@@ -1,4 +1,6 @@
 using Desafio.BackEnd.Context;
+using Desafio.BackEnd.Interfaces;
+using Desafio.BackEnd.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +15,10 @@ builder.Services.AddDbContext<DataContext>(config =>
 {
     config.UseSqlite(connectionString);
 });
+
+builder.Services.AddScoped<IRepositoryEvent, RepositoryEvent>();
+builder.Services.AddScoped<IRepositoryPanelist, RepositoryPanelist>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
