@@ -15,8 +15,7 @@ namespace Desafio.BackEnd.Repositories
 
         public async Task<T> CreateAsync(T entity)
         {
-            _context.Set<T>().Add(entity);
-            await _context.SaveChangesAsync();
+            await _context.Set<T>().AddAsync(entity);
 
             return entity;
         }
@@ -25,7 +24,6 @@ namespace Desafio.BackEnd.Repositories
         {
             var t = await _context.Set<T>().FindAsync(id);
             _context.Set<T>().Remove(t);
-            await _context.SaveChangesAsync();
         }
 
         public async Task<List<T>> GetAllAsync()
@@ -38,10 +36,9 @@ namespace Desafio.BackEnd.Repositories
             return await _context.Set<T>().FindAsync(id);
         }
 
-        public async Task UpdateAsync(T entity)
+        public void Update(T entity)
         {
             _context.Set<T>().Update(entity);
-            await _context.SaveChangesAsync();
         }
     }
 }
