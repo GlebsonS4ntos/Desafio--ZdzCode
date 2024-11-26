@@ -1,3 +1,4 @@
+using Desafio.BackEnd.Config;
 using Desafio.BackEnd.Context;
 using Desafio.BackEnd.Interfaces;
 using Desafio.BackEnd.Repositories;
@@ -19,6 +20,11 @@ builder.Services.AddDbContext<DataContext>(config =>
 builder.Services.AddScoped<IRepositoryEvent, RepositoryEvent>();
 builder.Services.AddScoped<IRepositoryPanelist, RepositoryPanelist>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+builder.Services.AddScoped(provider => new AutoMapper.MapperConfiguration(config =>
+{
+    config.AddProfile<AutoMapperConfig>();
+}));
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
