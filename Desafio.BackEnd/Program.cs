@@ -24,7 +24,7 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped(provider => new AutoMapper.MapperConfiguration(config =>
 {
     config.AddProfile<AutoMapperConfig>();
-}));
+}).CreateMapper());
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
