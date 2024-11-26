@@ -20,7 +20,7 @@ namespace Desafio.BackEnd.Repositories
             return entity;
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(long id)
         {
             var t = await _context.Set<T>().FindAsync(id);
             _context.Set<T>().Remove(t);
@@ -31,7 +31,7 @@ namespace Desafio.BackEnd.Repositories
             return await _context.Set<T>().ToListAsync();
         }
 
-        public async Task<T> GetByIdAsync(int id)
+        public async Task<T> GetByIdAsync(long id)
         {
             return await _context.Set<T>().FindAsync(id);
         }
