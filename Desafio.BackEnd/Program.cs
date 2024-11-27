@@ -14,7 +14,7 @@ var connectionString = builder.Configuration.GetConnectionString("Sqlite");
 
 builder.Services.AddDbContext<DataContext>(config =>
 {
-    config.UseSqlite(connectionString);
+    config.UseSqlite(connectionString).UseLazyLoadingProxies();
 });
 
 builder.Services.AddScoped<IRepositoryEvent, RepositoryEvent>();

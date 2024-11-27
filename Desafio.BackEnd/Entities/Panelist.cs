@@ -6,6 +6,6 @@
         public string Name { get; set; }
         public DateTime BirthDate { get; set; }
         public string Job {  get; set; }   
-        public List<Event> Events { get; set; } 
+        public virtual List<Event> Events { get; set; } 
     }
 }

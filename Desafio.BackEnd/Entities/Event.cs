@@ -10,6 +10,6 @@ namespace Desafio.BackEnd.Entities
         public string Place {  get; set; }
         public long PanelistId { get; set; }
         [JsonIgnore]
-        public Panelist Panelist { get; set; }
+        public virtual Panelist Panelist { get; set; }
     }
 }
