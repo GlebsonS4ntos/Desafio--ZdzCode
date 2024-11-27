@@ -9,7 +9,7 @@ namespace Desafio.BackEnd.Config
         public AutoMapperConfig()
         {
             CreateMap<EventDto, Event>().ReverseMap();
-            CreateMap<PanelistDto, PanelistDto>().ReverseMap();
+            CreateMap<PanelistDto, Panelist>().ReverseMap();
         }
     }
 }
