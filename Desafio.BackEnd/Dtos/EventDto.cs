@@ -9,6 +9,5 @@ namespace Desafio.BackEnd.Dtos
         public DateTime? Date { get; set; }
         public string? Place { get; set; }
         public long? PanelistId { get; set; }
-        public Panelist? Panelist { get; set; }
     }
 }
