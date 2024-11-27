@@ -1,4 +1,6 @@
-﻿namespace Desafio.BackEnd.Entities
+﻿using System.Text.Json.Serialization;
+
+namespace Desafio.BackEnd.Entities
 {
     public class Event
     {
@@ -7,6 +9,7 @@
         public DateTime Date { get; set; }
         public string Place {  get; set; }
         public long PanelistId { get; set; }
+        [JsonIgnore]
         public Panelist Panelist { get; set; }
     }
 }
